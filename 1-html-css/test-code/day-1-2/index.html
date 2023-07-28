@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<input>
+    <p class="classP1">Ordonnement clissique avec des points</p>
+    <ul>
+        <li>
+            List 1
+            <ul>
+                <li>List 1</li>
+            </ul>
+        </li>
+        <li>List 2</li>
+    </ul>
+
+    <p id="idP1">Ordonnement numérique</p>
+    <ol>
+        <li>List 1</li>
+        <li>List 2</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+
+    <h4 class="classP1">Mon titre ayant la classe classP1</h4>
+
+    <h4 id="idP2">Mon titre avec id idP2</h4>
+    
+    <dl>
+        <dt>Test 1</dt>
+        <dd>test 1.1</dd>
+
+        <dt>Test 1</dt>
+        <dd>test 2.1</dd>
+    </dl>
+
+    <img src="./images/logo.png" alt="logo" style="width: 200px;" />
+    
+    <div style="margin-bottom: 30px;">
+        <label for="">Nom</label>
+        <br />
+        <input type="text" name="nom" placeholder="Votre nom">
+    </div>
+
+    <div>
+        <input type="text" placeholder="Votre nom" disabled>
+    </div>
+
+    <br /><br />
+    <div>
+        <label for=""></label>
+        <input type="text" autofocus>
+    </div>
+
+    <br/><br/>
+    <a href="https://www.w3schools.com/" target="_">
+        Visit ARK-X Academy!
+    </a>
+    <br/>
+    <a href="mailto:maliki.tcherou1@gmail.com">Send email</a>
+    <br/>
+    <a href="tel:0627895656">Call number</a>
+
+    <br/><br/>
+    <video width="320" height="240" controls>
+        <source src="./videos/Flavour - Someone Like You [Official Video].mp4" type="video/mp4">
+        <source src="./videos/Flavour - Someone Like You [Official Video].ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/ffXL1dw3Unc?list=RDffXL1dw3Unc" title="Flavour - Someone Like You [Official Video]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+    <br /><br />
+    <form>
+        <div>
+            <label for="phone">Enter a phone number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+        </div>
+        <br />
+        <div>
+            <label for="points">Points:</label>
+            <input type="number" id="points" name="points" step="3">  
+        </div>
+    </form>
+
+    <br /><br />
+    <picture>
+        <source media="(min-width: 650px)" srcset="images/img-01.jpg">
+        <source media="(min-width: 465px)" srcset="images/img-02.jpg">
+        <img src="logo.png">
+    </picture>
+
+    <form action="">
+        <div>
+            <label for="firstname">First name</label>
+            <input type="text" name="firstname" id="firstname">
+        </div>
+    
+        <div>
+            <label for="lastname">Last name *</label>
+            <input type="text" name="lastname" id="lastname" required>
+        </div>
+
+        <input type="submit" value='Enregistrer' />
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+.classP1 {
+    font-size: 25px;
+    color: #f73232;
+}
+
+#idP1 {
+    font-size: 18px;
+    color: green;
+}
+
+dt::before {
+    content: "* ";
+}
+
+dt::after {
+    content:  ' :';
+}
+
+dd::before {
+    content: '. ';
+}
