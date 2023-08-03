@@ -5,15 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- <style>
         #parent {
-        color: red;
+            color: red;
         }
 
         .child {
-        color: blue;
+            color: blue;
         }
-    </style>
+
+        .mySpan {
+            display: block;
+        }
+
+        .myDiv {
+            /* display: inline; */
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: green;
+
+            /* 
+            inline-block : sont positionnées les uns à côté des autre
+            comme des éléments en inline.
+            Cela signifie que les éléments se suivent dans la ligne horizontale
+            et ils ne comment âs sur une nouvelle ligne par défaut
+
+            inline-block : respect la largeur et la hauteur : contrairement aux éléments inline
+            */
+        }
+    </style> -->
 </head>
 <body>
     <div id="parent">
@@ -21,6 +45,45 @@
         <div class="child">
             Hello
         </div>
+    </div>
+
+    <br/>
+    <br/>
+    <span class="mySpan">Mon span 1</span>
+    <span>Mon span 2</span>
+    <span>Mon span 3</span>
+
+    <br/>
+    <br/>
+    <div class="myDiv">Mon div 1</div>
+    <div class="myDiv">Mon div 2</div>
+    <div>Mon div 3</div>
+
+    <br />
+    <br />
+    <div class="main">
+        Mon text directement dans la div main
+        <div class="list subsection">
+            Mon test list
+
+            <p class="list">Hello</p>
+
+            <div class="list2">
+                Petit enfant de main
+            </div>
+        </div>
+
+        <div class="list">
+            Enfant directe 1 de main
+        </div>
+
+        <div class="list2">
+            Enfant directe 2 de main
+        </div>
+
+        <p class="list3">
+            Enfant directe 3 de main
+        </p>
     </div>
 </body>
 </html>

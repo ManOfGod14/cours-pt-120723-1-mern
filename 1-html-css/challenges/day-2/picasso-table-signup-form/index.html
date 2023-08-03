@@ -34,5 +34,59 @@
             </tr>
         </table>
     </div>
+
+    <div style="margin: 15px; margin-bottom: 20px;">
+        <h1>Signup Form</h1>
+        <fieldset style="width: 380px;">
+            <legend>Personal Details</legend>
+            <form action="">
+                <div style="margin: 10px 0;">
+                    <label for="salutation">Salutation</label><br/>
+                    <select name="salutation" id="salutation" style="height: 30px;">
+                        <option value="">-- None --</option>
+                        <option value="Hello">Hello</option>
+                        <option value="Hi">Hi</option>
+                    </select>
+                </div>
+
+                <div style="margin: 10px 0;">
+                    <label for="first_name">First Name :</label>
+                    <input type="text" name="first_name" id="first_name" style="height: 30px;">
+                </div>
+
+                <div style="margin: 10px 0;">
+                    <label for="last_name">Last Name :</label>
+                    <input type="text" name="last_name" id="last_name" style="height: 30px;">
+                </div>
+
+                <div style="margin: 10px 0;">
+                    <label for="last_name">Gender :</label>
+                    <input type="radio" name="gender" id="genderMale">
+                    <label for="last_name">Male</label>
+                    <input type="radio" name="gender" id="genderFemale">
+                    <label for="last_name">Female</label>
+                </div>
+
+                <div style="margin: 10px 0;">
+                    <label for="email">Email :</label>
+                    <input type="email" name="email" id="email" style="height: 30px;">
+                </div>
+
+                <div style="margin: 10px 0;">
+                    <label for="birth">Date of birth :</label>
+                    <input type="date" name="birth" id="birth" style="height: 30px;">
+                </div>
+
+                <div style="margin: 10px 0;">
+                    <label for="address">Address :</label><br/>
+                    <textarea name="address" id="address" cols="30" rows="3"></textarea>
+                </div>
+
+                <div style="margin: 10px 0;">
+                    <input type="button" value="Submit">
+                </div>
+            </form>
+        </fieldset>
+    </div>
 </body>
 </html>

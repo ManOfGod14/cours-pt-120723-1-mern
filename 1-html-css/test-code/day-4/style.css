@@ -1,0 +1,59 @@
+#parent {
+    color: red;
+}
+
+.child {
+    color: blue;
+}
+
+.mySpan {
+    display: block;
+}
+
+.myDiv {
+    /* display: inline; */
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: green;
+
+    /* 
+    inline-block : sont positionnées les uns à côté des autre
+    comme des éléments en inline.
+    Cela signifie que les éléments se suivent dans la ligne horizontale
+    et ils ne comment âs sur une nouvelle ligne par défaut
+
+    inline-block : respect la largeur et la hauteur : contrairement aux éléments inline
+    */
+}
+
+p {
+    color: yellow;
+}
+
+/* rule 1 */
+.subsection {
+    color: blue;
+}
+
+/* rule 2 */
+/* sélectionner tous les déscends de main */
+.main .list {
+    color: red;
+}
+
+.list2 {
+    font-size: 1.2em;
+}
+
+.list3 {
+    font-size: 2em;
+}
+
+/* sélectionner tous les directes de main */
+.main > .list2, 
+.main > .list3 {
+    color: green;
+}
+
