@@ -1,0 +1,51 @@
+/* selecteur element ou selecteur de type */
+div {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-weight: 900;  
+}
+
+h2 {
+    font-weight: 900;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+}
+
+/* Sélecteur en chaine ou sélecteur combiné */
+.subsection.header.preview {
+    color: red;
+}
+
+.header {
+    font-size: 25px;
+    color: blue;
+}
+
+
+/* selecteurs parents enfants et descendants */
+.parent > h3 { 
+    /* je cible tous les enfants directe h3 de la classe parent */
+    color: green;
+}
+
+.parent > .enfantH3 {
+    /* je cible tous les enfants directe ayant une classe enfantH3 de la classe parent */
+    font-size: 30px;
+}
+
+.parent p {
+    /* je cible tous les enfants et les descendants p de la classe parent */
+    color: brown;
+}
+
+/* .parent > .enfantDiv1 > div > p {
+    color: orange;
+} */
+
+.parent .descendantDiv1Niv1 > p {
+    color: yellow;
+}

@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #idH3 {
+            color: green;
+        }
+
+        #idH3 .monColeur {
+            color: blue;
+        }
+
+        .text-danger {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1 style="color: red;">
+        Day 3 - Anatomy
+    </h1>
+
+    <div id="idH3">
+        Mon titre
+        <h3 class="monColeur">
+            Mon titre h3
+        </h3>
+
+        <p>Lorem ipsum dolor sit <span class="text-danger">Maliki</span> amet consectetur adipisicing elit. Repudiandae ratione ea quod consequuntur vitae dicta aliquam, nobis ullam voluptates, aut, placeat id. Sit commodi quidem obcaecati qui ab error laborum?</p>
+
+        <span class="monColeur">Mon span</span>
+    </div>
+
+    <br/>
+    <br/>
+    <div>
+        <div class="subsection header">
+            Latest Posts
+        </div>
+        <p class="header preview subsection">
+            This is where a preview for a post might go.
+        </p>
+    </div>
+
+    <br/>
+    <div class="parent">
+        <h3 class="enfantH3">selecteurs parents enfants et descendants</h3>
+        
+        <div class="enfantDiv1">
+            <p class="descendantP1Niv1">Mon paragraphe p1</p>
+            <p class="descendantP2Niv1">Mon paragraphe p2</p>
+
+            <div class="descendantDiv1Niv1">
+                <p class="descendantP1Niv2">Mon paragraphe p3</p>
+                <span class="descendantSpan1Niv2">Mon span 1</span>
+            </div>
+
+            <div class="descendantDiv1Niv1">
+                <p class="descendantP1Niv2">Mon paragraphe p3'</p>
+                <span class="descendantSpan1Niv2">Mon span 1'</span>
+            </div>
+        </div>
+
+        <p class="enfantP">Mon paragraphe p4</p>
+
+        <div class="enfantDiv2">
+            Ma div enfant 1
+        </div>
+    </div>
 </body>
 </html>
