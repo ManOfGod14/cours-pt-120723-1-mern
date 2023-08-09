@@ -1,0 +1,46 @@
+html {
+   font-size: 14px; 
+}
+
+.parent {
+    font-size: 16px;
+}
+
+.enfantPX {
+    font-size: 22px;
+}
+
+.enfantEM {
+    font-size: 2em;
+}
+
+.enfantREM {
+    font-size: 3rem;
+}
+
+.enfantPourcentage {
+    font-size: 200%;
+}
+
+.enfantVW {
+    font-size: 6vw;
+}
+
+.enfantVH {
+    font-size: 6vh;
+}
+
+.positionParent {
+    font-size: 26px;
+    position: relative;
+}
+
+.positionParent > .staicElement {
+    position: static;
+}
+
+.positionParent > .relativeElement {
+    width: 100%;
+    top: 100px;
+    left: 160px;
+}
