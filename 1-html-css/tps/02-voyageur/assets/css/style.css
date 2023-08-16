@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #FAEBD7;
+    margin: 15px 0;
+    font-family: 'Montserrat';
+}
+
+/* l'entete - start */
+header, main, footer {
+    /* padding-right: 60px;
+    padding-left: 60px; */
+
+    /* avec 2 valeurs le 1er c'est top et bottom, le 2ème c'est left et right */
+    padding: 0 60px; 
+
+    /* avec 1 valeurs  c'est pour 4 cotés */
+    /* padding: 60px; */
+
+    /* avec 4 valeurs : le 1er c'est top, 2ème right, 3ème bottom et le 4ème c'est left */
+    /* padding: 0 60 0 0px; */
+
+    /* avec 3 valeurs : le 1er cest pour le top, le 2ème c'est pour le right et left, le 3ème c'est pour bottom */
+    /* padding: 60px 0 60px; */
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    float: left;
+    padding-top: 8px;
+}
+
+nav {
+    /* float: right; */
+    text-align: right;
+    padding: 30px;
+}
+
+nav li {
+    display: inline;
+    padding-left: 16px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.active-menu {
+    text-decoration: underline;
+    color: red;
+}
+/* l'entete - end */
+
+/*************************************/
+/* corps du contenu - start */
+/*************************************/
+.section-left-right {
+    margin: 0 60px;
+}
+
+.section-top-bottom {
+    margin: 60 0px;
+}
+
+main {
+    border-top: 1px dashed;
+    padding: 12px 0;
+}
+
+.banner {
+    background-image: url('../images/banniere.svg');
+    height: 200px;
+    position: relative;
+    border-radius: 6px;
+}
+
+.banner-box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 155px;
+    /* width: 100%; */
+    background-color: #c5fdff73;
+    padding: 0 12px;
+}
+
+button {
+    float: right;
+    margin-top: -40px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+    background-color: #460303;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+article {
+    width: 60%;
+    float: left;
+    text-align: justify;
+}
+
+aside {
+    background-color: #404738;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    width: 30%;
+    float: right;
+    margin-top: 20px;
+}
+
+aside > img {
+    width: 120px;
+}
+
+aside p {
+    text-align: justify;
+}
+
+.social-media {
+    font-size: 1.2em;
+    word-spacing: 25px;
+}
+/* corps du contenu - end */
+
+/* le bas du page - start */
+footer {
+    border-top: 1px dashed;
+    clear: both;
+}
+
+.footer-row {
+    display: inline-block;
+    margin: 0 25px;
+    width: 30%;
+}
+
+.footer-img {
+    width: 100px;
+    border: 3px solid #085e82;
+}
+/* le bas du page - end */

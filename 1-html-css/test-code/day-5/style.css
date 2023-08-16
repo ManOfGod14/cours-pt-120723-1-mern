@@ -1,3 +1,16 @@
+.page-title {
+    font-size: 36px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 27px;
+    text-align: center;
+}
+
+/**
+* 
+*/
 html {
    font-size: 14px; 
 }
@@ -30,17 +43,57 @@ html {
     font-size: 6vh;
 }
 
-.positionParent {
-    font-size: 26px;
-    position: relative;
-}
+/**
+* Les positions en CSS
+*/
 
-.positionParent > .staicElement {
+/* Position static */
+.static-element {
+    border: 2px solid #000;
+    font-size: 22px;
     position: static;
+    /* top: 100px;
+    left: 100px; */
 }
 
-.positionParent > .relativeElement {
-    width: 100%;
+/* Position relative */
+.relative-element {
+    border: 2px solid #000;
+    font-size: 22px;
+    position: relative;
     top: 100px;
-    left: 160px;
+    left: 100px;
+}
+
+/* Position absolute */
+.absolute-parent {
+    border: 2px solid #000;
+    font-size: 22px;
+    position: relative; /* peux prendre aussi : absolute ou fixed */
+    top: 150px;
+    left: 80px;
+}
+.absolute-element {
+    border: 2px dashed #000;
+    font-size: 22px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+/* Position fixed */
+.fixed-element {
+    border: 2px solid #000;
+    font-size: 22px;
+    position: fixed;
+    bottom: 90px;
+    right: 60px;
+}
+
+/* Position sticky */
+.sticky-element {
+    border: 2px solid #000;
+    font-size: 22px;
+    position: sticky;
+    bottom: 200px;
 }

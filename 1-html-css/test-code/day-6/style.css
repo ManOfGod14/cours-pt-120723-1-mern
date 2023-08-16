@@ -1,0 +1,91 @@
+.flexbox-container {
+    background: lightblue;
+    padding: 16px;
+    border: 4px solid blue;
+    display: flex;
+    gap: 8px;
+    /* width: 360px; */
+    height: 720px;
+
+    /*
+    * justify-content : permet d'aligner horizontalement les éléments d'un conteneur flex le long de l'axe principal
+    * space-between : Les éléments enfants du conteneur sont répartis uniformement sur l'axe principal de sorte qu'il y a un espacement égale
+    * space-around : Les éléments enfants du conteneur sont répartis uniformement sur l'axe principal avec un espacement égal autour de chaque élément
+    * space-evenly : Les éléments enfants du conteneur sont répartis uniformement sur l'axe principal avec un espacement égal autour entre les éléments ainsi qu'à l'extrémité du conteneur
+    */
+    justify-content: flex-end;
+}
+
+.flexbox-item {
+    background: peachpuff;
+    border: 4px solid salmon;
+    height: 48px;
+    padding: 4px;
+    width: 200px;
+
+    /* *
+    * le flex est une propriété raccourcie utilisée dans un modele de disposition flexible (flexbox) 
+    * pour définir plusieurs valeurs liées au comportement d'un element enfant à l'intérieur d'un container (parent)
+    * la propriété raccourcie du felx prend 3 tois valeus dans cet ordre = flex-grow flex-shrink flex-basis
+    * flex : 
+    *
+    * 1ère valeur du flex => flex-grow : est utilisée dans un modèle de disposition de flexible (flexbox) pour contrôler la 
+    * façon dont les éléments enfants augments en taille lorsque l'espace disponible dans le parent (container)
+    * flex est supéreur à la somme des tailles de tous élements enfants
+    * si flex-grow = 0 : l'élement enfant n'augmente pas sa taille et reste à sa taille d'origne
+    * si flex-grow > 0 (ex: 1) : l'élement augmente en taille proportionnellement  par rapport aux autres éléments enfants du même conteneur en fonction de la quantité d'espace disponible
+    * Plus la valeur flex-grow est élevée, plus l'élement enfant est enclin (obligé) à augmenter davantage
+    *
+    * 2ème valeur du flex => flex-shrink : fait exactement le contraire de flex-grow
+    *
+    * 3ème valeur du flex => flex-basis : est utilisée dans un modèle de disposition de flexible (flexbox) pour définir la taille
+    * de base d'un élément enfants avant que l'espace disponible du parent soit distribué entre les élements enfants du conteneur
+    * 
+    *
+    */
+
+    /* valeur du flex-grow */
+    /* flex: 0; */
+    /* flex = 1 : cela équivaut flex-grow: 1 , flex-shrink: 1 et flex-basis: auto ou 0% */
+    /* flex: 1;  */
+    /* flex = 1 : cela équivaut flex-grow: 1, flex-shrink: 1 et flex-basis: auto ou 0% */
+    /* flex: 1 1; */
+    /* flex = 1 1 300px : cela équivaut flex-grow: 1, flex-shrink: 1 et flex-basis: 300px */
+    /* flex: 0 1 300px; */
+}
+
+.flexbox-item-1 {
+    /* flex: 0; */
+    /* flex: 1; */
+    /* flex-grow: 1; */
+    min-height: 360px;
+    /* width: 300px; */
+    /* flex: 1 1; */
+    /* flex-shrink: 1; */
+    /* flex: 0 1 300px; */
+    /* flex-basis: 500px; */
+}
+
+.flexbox-item-2 {
+    /* flex: 1; */
+    /* flex: 1; */
+    /* flex-grow: 1; */
+    min-height: 360px;
+    /* width: 300px; */
+    /* flex: 1 1; */
+    /* flex-shrink: 2; */
+    /* flex: 0 1 300px; */
+    /* flex-basis: 200px; */
+}
+
+.flexbox-item-3 {
+    /* flex: 1; */
+    /* flex: 2; */
+    /* flex-grow: 2; */
+    min-height: 360px;
+    /* width: 300px; */
+    /* flex: 1 1; */
+    /* flex-shrink: 3; */
+    /* flex: 0 1 300px; */
+    /* flex-basis: 400px; */
+}

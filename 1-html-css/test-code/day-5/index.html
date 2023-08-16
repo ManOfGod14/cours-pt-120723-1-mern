@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Day 5</h1>
+    <h1 class="page-title">Day 5</h1>
+
+    <h2 class="section-title">Les outils de développement HTML & CSS, les Styles par défaut en CSS</h2>
     <div>
         <span>Mon span</span>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error nostrum facilis impedit doloremque architecto labore, libero veniam totam id soluta! Quam animi tempora enim autem, rem vitae qui consequatur ratione.</p>
     </div>
 
+    <h2 class="section-title">Les unités en CSS</h2>
     <div class="parent">
         Enfant contenu
         <p class="enfantPX">Enfant PX (l'unité pixel PX est fixe qui définit explicitement la taille en px, donc est absolu, ne change pas en fonction de la résolution de l'écran.)</p>
@@ -24,9 +27,28 @@
         <p class="enfantVH">Enfant VH : viewport height</p>
     </div>
 
-    <div class="positionParent">
-        <p class="staicElement">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusamus delectus provident dignissimos officiis sequi expedita veritatis excepturi, animi nam est ipsa quasi ea voluptatum eos repudiandae ipsum recusandae laborum.</p>
-        <p class="relativeElement">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, numquam! Esse veritatis sapiente obcaecati eos illo omnis similique illum odit earum iste, sunt corporis blanditiis fuga beatae minima assumenda molestias.</p>
+    <h2 class="section-title">Les positions en CSS</h2>
+    <div class="static-element">
+        <b>La position static</b> signifie que l'élément est positionné selon le flux normal du document. il n'est pas affecté par les propriétés  de positionnement : top, right, bottom ou left
+    </div>
+
+    <div class="relative-element">
+        <b>La position relative : </b> l'élément est positionné par rapport à sa position d'origine dans le flux de contenu. Il est possible d'utiliser les propriétés top, right, bottom ou left pour déplacer mon élément  de sa position.
+    </div>
+
+    <div class="absolute-parent">
+        Contenu textuel du parent
+        <div class="absolute-element">
+            <b>La position absolue : </b> l'élément est positionné par rapport à son parent le plus proche qui a une position relative, absolue ou fixe. Si aucun parent n'est trouvé avec ces positions, l'élément est positionné par rapport au corps de la page (le viewport)
+        </div>
+    </div>
+
+    <div class="fixed-element">
+        <b>La position fixe : </b> l'élement est positionné par rapport au viewport (fenêtre d'affichage) et reste fixe même si la page est défilée.
+    </div>
+
+    <div class="sticky-element">
+        <b>La position sticky : </b> l'élément est positionné comme relative, jusqu'à ce que l'utilisateur fasse défiler la page jusqu'à ce que l'élement atteigne une position spécifiée et devient fixe.
     </div>
 </body>
 </html>
