@@ -1,0 +1,136 @@
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F0F2F5;
+}
+
+.container {
+    margin: 0 220px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+/********************************
+* Section logo - start
+*********************************/
+.section-logo {
+    width: 56%;
+    height: fit-content;
+    margin-right: 66px;
+}
+
+.section-logo > .logo {
+    width: 300px;
+    height: auto;
+}
+
+.section-logo > p {
+    font-size: 40px;
+}
+/********************************
+* Section logo - end
+*********************************/
+
+/********************************
+* Section login - start
+*********************************/
+.section-login {
+    width: 44%;
+    height: fit-content;
+}
+
+.section-login > p {
+    font-size: 22px;
+    text-align: center;
+}
+
+.section-login span {
+    font-weight: bold;
+}
+
+.login-form {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid #FFFFFF;
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 36px;
+    /* text-align: center; */
+}
+
+.form-group {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.form-group .form-control {
+    width: 100%;
+    height: 70px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 22px;
+    padding: 14px;
+    /* box-sizing: border-box; */
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn2 {
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.btn-lg {
+    height: 60px;
+    font-size: 28px;
+}
+
+.btn-md {
+    height: 40px;
+    font-size: 20px;
+}
+
+.btn-sm {
+    height: 20px;
+    font-size: 15px;
+}
+
+.btn-primary {
+    background-color: #1178F2;
+    color: #FFFFFF;
+}
+
+.btn-success {
+    background-color: #28A745;
+    color: #FFFFFF;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.forgotten-link {
+    text-decoration: none;
+    color: #1178F2;
+    /* margin-left: 200px; */
+}
+
+hr {
+    margin-top: 20px;
+}
+
+/********************************
+* Section login - end
+*********************************/
