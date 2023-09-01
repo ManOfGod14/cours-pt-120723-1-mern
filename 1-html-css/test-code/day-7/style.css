@@ -1,0 +1,155 @@
+/**
+* Exemple 1
+*/
+.grid-container {
+    background-color: #f0f0f0;
+    padding: 30px;
+    display: grid;
+    grid-gap: 30px;
+
+    /**
+    * les colonnes
+    */
+    /* utilisations des pixels */
+    /* grid-template-columns: 400px 400px 200px; */
+    /* utilisations des fractions */
+    /* grid-template-columns: 4fr 2fr 1fr; */
+    /* utilisations des répétitions */
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: 400px;
+
+    /**
+    * lines
+    */
+    /* utilisations des pixels */
+    /* grid-template-rows: 400px 200px; */
+    /* utilisations des fractions */
+    /* grid-template-rows: 4fr 2fr 1fr 2fr; */
+    /* utilisations des répétitions */
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-rows: 300px;
+
+    /**
+    * les aires (dans l'espace)
+    */
+}
+
+.grid-item {
+    background-color: rgb(16, 163, 249);
+    padding: 30px;
+    color: #FFF;
+    text-align: center;
+    /* margin: 10px; */
+}
+
+.grid-item-1 {
+    background-color: rgb(249, 101, 16);
+}
+
+.grid-item-2 {
+    background-color: rgb(16, 101, 249);
+}
+
+.grid-item-3 {
+    background-color: rgb(32, 170, 4);
+}
+
+.grid-item-4 {
+    background-color: rgb(249, 16, 222);
+}
+
+.grid-item-5 {
+    background-color: rgb(243, 177, 92);
+}
+
+.grid-item-6 {
+    background-color: rgb(249, 16, 16);
+}
+
+.grid-item-7 {
+    background-color: rgb(31, 16, 249);
+}
+
+.grid-item-8 {
+    background-color: rgb(16, 249, 233);
+}
+
+/**
+* Exemple 2
+* les aires (dans l'espace) de conteneur grid-container-2
+*/
+.grid-container-2 {
+    background-color: #f0f0f0;
+    padding: 30px;
+    display: grid;
+    grid-gap: 30px;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    grid-template-areas: 
+        "header header"
+        "main sidebar"
+        "footer footer";
+    
+}
+.grid-item-2-1 {
+    background-color: rgb(249, 101, 16);
+    grid-area: header;
+}
+.grid-item-2-2 {
+    background-color: rgb(16, 101, 249);
+    grid-area: main;
+}
+.grid-item-2-3 {
+    background-color: rgb(32, 170, 4);
+    grid-area: sidebar;
+}
+.grid-item-2-4 {
+    background-color: rgb(249, 16, 222);
+    grid-area: footer;
+}
+
+/**
+* Exemple 3
+*/
+.grid-container-image {
+    background-color: #f0f0f0;
+    padding: 30px;
+    display: grid;
+    grid-gap: 30px;
+
+    grid-auto-columns: 400px;
+    grid-auto-rows: 400px;
+
+    /* grid-template-columns: repeat(3, 400px);
+    grid-template-rows: repeat(2, 400px); */
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-item-image {
+    /* background-color: transparent; */
+    background-color: rgb(16, 163, 249);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: 2 / 3;
+}
+
+.grid-item-image-1 {
+    background-image: url('images/image-01.jpg');
+}
+
+.grid-item-image-2 {
+    background-image: url('images/image-02.jpg');
+}
+
+.grid-item-image-3 {
+    background-image: url('images/image-03.jpg');
+}
+
+.grid-item-image-4 {
+    background-image: url('images/image-01.jpg');
+}

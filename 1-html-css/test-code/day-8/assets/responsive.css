@@ -1,0 +1,90 @@
+/**
+* Responsive design (Media queries)
+*/
+
+/* Responsive de base - Réorganier le contenu lorque la largeur de l'écran est reduite */
+@media (max-width: 768px) {
+    .text-center {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b019d;
+    }
+}
+
+/* Styles spécifiques pour les tablettes en mode portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .group1 {
+        background-color: rgb(255, 14, 14);
+        color: #FFF;
+    }
+
+    .group1 + div {
+        background-color: rgb(32, 67, 174);
+        color: #FFF;
+    }
+    
+    .group2 ~ div {
+        background-color: rgb(12, 61, 15);
+        color: #FFF;
+    }
+}
+
+/* Styles spécifiques pour les tablettes en mode paysage */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .group1 {
+        background-color: rgb(114, 116, 4);
+        color: #FFF;
+    }
+
+    .group1 + div {
+        background-color: rgb(225, 112, 7);
+        color: #FFF;
+    }
+
+    .group1 + div > h3 {
+        font-size: 24px;
+        color: #5d5c67
+    }
+    
+    .group2 ~ div {
+        background-color: rgb(71, 3, 103);
+        color: #FFF;
+    }
+}
+
+/* Styles spécifiques pour les écrans haute résolution */
+@media (min-resolution: 2dppx) {
+    .psuedo-class ul li {
+        font-size: 30px;
+        margin: 50px;
+    }
+
+    .psuedo-element ul li {
+        font-size: 30px;
+        margin: 50px;
+    }
+}
+
+/* Cahnger les styles en fonction de la taille de la fenêtre du navigateur */
+@media (min-width: 500px) and (max-width: 800px) {
+    .other-example h2 {
+        text-align: center;
+        color: #915503;
+        font-weight: bold;
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+}
+
+/* Styles spécifiques pour les petits écrans, comme les smartphones */
+@media only screen and (max-width: 480px) {
+    .psuedo-class ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .psuedo-element ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,144 @@
+/**
+* selecteur avancés
+*/
+.text-center {
+    text-align: center;
+}
+
+.group1, .group2, .group3, .group4, .group5, .other-example {
+    margin: 30px 15px;
+    padding: 15px;
+}
+
+.group1 {
+    background-color: rgb(234, 234, 234);
+}
+
+/* Sélecteur adjacent : il cible l'élement suivant directement la classe .group1 qui est une div */
+.group1 + div {
+    background-color: rgb(255, 181, 181);
+}
+
+/* Sélecteur de frère suivant : il cible tous éléments du même sélecteur qui suivent l'élément spécifié */
+.group2 ~ div {
+    background-color: rgb(85, 144, 255);
+}
+
+/**
+* Pseudo classes
+*/
+.other-example {
+    font-size: 16px;
+}
+
+a {
+    color: blue;
+}
+
+.other-example a:visited {
+    color: rgb(255, 83, 83);
+}
+
+input {
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+input:focus {
+    border: 1px solid red;
+    outline: none;
+    /* background-color: #000; */
+    color: #FFF;
+}
+
+.psuedo-class ul li {
+    /* text-decoration: none; */
+    font-size: 20px;
+    list-style: none;
+    display: inline;
+    margin: 10px;
+}
+
+.psuedo-class li:before {
+    content: '-';
+    margin-right: 3px;
+}
+
+.psuedo-class li:after {
+    content: '#';
+    margin-left: 3px;
+}
+
+/**
+* :nth-child(an + b) => il faut noter que a et b sont des entiers naturelles (positif et négatif)
+* 1) an (partie avant 'n') : c'est une nombre qui répresente un multiple de la position de l'élement que vous vouslez cibler
+* Exemple de valeurs an :
+* an = 2n : signifie qu'on cherche tous les multiples de 2, donc on cible les éléments aux positions 2, 4, 6, 8, ...etc.
+* an = 3n : signifie qu'on cherche tous les multiples de 3, donc on cible les éléments aux positions 3, 6, 9, 12, ...etc.
+* an = odd : signifie tous les nombre impairs, donc on cherche (cible) tous éléments qui sont à des position impaires (1, 3, 5, 7 ...etc.)
+* an = even : signifie tous les nombre pairs, donc on cherche (cible) tous éléments qui sont à des position paires (2, 4, 6, 8 ...etc.)
+* 
+* 2) b (partie après 'n') : c'est un nombre ou une valeur optionnelle qui répresente le décalage par rapport aux multiples définis par an
+* an + b = 2n + 1 : cela signifie qu'on commence à cibler les éléments à partir du deuxième multiple défini par an, plus un décalage de 1
+*/
+.psuedo-class ul li:nth-child(odd) {
+    color: green;
+}
+
+.psuedo-class ul li:nth-child(even) {
+    color: violet;
+}
+
+/* .psuedo-class ul li:nth-child(3n) {
+    background-color: #ccc;
+} */
+
+.psuedo-class ul li:nth-child(2n + 1) {
+    background-color: #a6eaff;
+}
+
+.psuedo-class ul li:first-child {
+    font-size: 30px;
+}
+
+.psuedo-class ul li:last-child {
+    font-weight: 900;
+}
+
+.psuedo-class div > p:not(.special) {
+    font-style: italic;
+    font-weight: 900;
+}
+
+/**
+* Pseudo elements
+*/
+
+.psuedo-element ul li {
+    /* text-decoration: none; */
+    font-size: 20px;
+    list-style: none;
+    display: inline;
+    margin: 10px;
+}
+
+.psuedo-element li::before {
+    content: '+';
+    margin-right: 3px;
+}
+
+.psuedo-element li::after {
+    content: '*';
+    margin-left: 3px;
+}
+
+.psuedo-element div::first-line {
+    font-size: 24px;
+    color: brown;
+}
+
+.psuedo-element article div::first-letter {
+    font-size: 36px;
+    color: rgb(0, 0, 58);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
