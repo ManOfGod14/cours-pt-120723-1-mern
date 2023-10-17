@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 15 (Modules et Promesses en Javascript)</title>
+</head>
+<body>
+    <h1>Day 15 (Modules et Promesses en Javascript)</h1>
+
+    <h2>Exercices sur les modules en JavaScript</h2>
+    <ol>
+        <li><b>Module Export/Import : </b> Créez deux fichiers JavaScript, l'un avec une fonction add qui additionne deux nombres, et l'autre qui importe cette fonction et l'utilise pour ajouter deux nombres. Assurez-vous que cela fonctionne correctement.</li>
+        <li><b>Module de Calcul : </b> Créez un module JavaScript contenant plusieurs fonctions mathématiques telles que l'addition, la soustraction, la multiplication et la division. Importez ce module dans un autre fichier JavaScript et utilisez ces fonctions pour effectuer divers calculs.</li>
+        <li><b>Module de Liste : </b> Créez un module qui expose une liste de noms de fruits. Importez ce module dans un autre fichier JavaScript et utilisez-le pour afficher la liste des fruits dans la console.</li>
+        <li><b>Module de Configuration : </b> Créez un module qui contient des constantes de configuration, par exemple, un module de configuration pour une application de calculatrice. Importez ce module et utilisez les constantes de configuration dans votre application.</li>
+    </ol>
+
+    <h2>Exercices sur les promesses en JavaScript</h2>
+    <ol>
+        <li><b>Promesse Simple : </b> Créez une promesse qui résout après une courte attente (par exemple, 2 secondes) avec un message de succès. Ensuite, utilisez .then() pour afficher ce message lorsque la promesse est résolue.</li>
+        <li><b>Promesse Rejetée : </b> Créez une promesse qui est rejetée après un court délai avec un message d'erreur. Utilisez .catch() pour gérer le rejet de la promesse et afficher le message d'erreur.</li>
+        <li><b>Promesses en Parallèle : </b> Créez trois promesses distinctes qui effectuent des tâches différentes. Utilisez Promise.all() pour attendre que toutes les promesses se terminent, puis affichez un message une fois qu'elles sont toutes résolues.</li>
+        <li><b>Promesse avec Fonction Asynchrone : </b> Créez une fonction asynchrone qui retourne une promesse. À l'intérieur de la fonction, effectuez une opération asynchrone (par exemple, un délai avec setTimeout) avant de résoudre la promesse avec un résultat. Appelez cette fonction et utilisez await pour obtenir le résultat de la promesse.</li>
+    </ol>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
