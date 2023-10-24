@@ -8,6 +8,33 @@
 <body>
     <h1>Day 16 (Async / Await)</h1>
 
+    <h2>Opérations Synchrones :</h2>
+    <ul>
+        <li>Les opérations Synchrones sont des opérations qui sont exécutées en séquence, une après l'autre, de manière bloquante. cela signifie qu'une opération doit terminer avant que l'opération suivante ne commence</li>
+        <li>Les opérations synchrones sont courantes le code Javascript standard. Par lors de l'exécution d'un simple addition, l'opération est synchrone et le résultat est immédiatement disponible.</li>
+        <li>Les opérations synchrones sont utiles pour éffectuer des tâches qui dépendent du résultat immédiat de l'opération précédente.</li>
+    </ul>
+
+    <h2>Opérations Asynchrones :</h2>
+    <ul>
+        <li>les opérations asynchrones sont des opérations qui ne bloquent pas le flux d'exécution du programme. Au lieu de ça, elles sont planifiées pour s'exécuter ultérieulement, souvent en parallèle avec d'autes oopérations.</li>
+        <li>Les opérations asynchrones sont couramment utilisées pour gérer des tâches qui prennent du temps, comme les appels réseau, les lectures de fichers lourds, les délais (timers), ...etc.</li>
+        <li>Pour gérer les opérations asynchrones, Javascript fournit des mécanismes tels que les rappels (callbacks), les promesses, <b>async</b>/<b>await</b>, ...etc.</li>
+    </ul>
+
+    <h2>async</h2>
+    <ul>
+        <li><b>async</b>  est un mot-clé que vous pouvez utiliser pour déclarer une function asynchrone. Une fonction déclarée avec <b>async</b> retourne toujours une promesse</li>
+        <li>L'utilisation de async dans une fonction indique que cette fonction peut contenur des opérations asynchrones, telles que des appels réseau, des lectures de fichers lourds, des délais (timers), ...etc.</li>
+        <li>La fonction <b>async</b> permet d'attendre que les prommesses soient résolues avant de continuer son exécution</li>
+    </ul>
+
+    <h2>await</h2>
+    <ul>
+        <li><b>await</b> est un autre mot-clé utilisé à l'intérieur d'une fonction déclarée avec <b>async</b>. Il est utilisé pour attendre q'une promesse soit résolue avant de pousuivre l'exécution du code.</li>
+        <li>Lorsque vous utilisez <b>await</b> à l'intérieur d'une fonction asynchrone, le programme suspend l'exécution de cette fonction jusqu'à ce que la promesse soit résolue, puis continue l'exécution.</li>
+    </ul>
+
     <script src="app.js"></script>
 </body>
 </html>
