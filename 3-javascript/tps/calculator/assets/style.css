@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'bootstrap-icons';
+    src: url('./fonts/bootstrap-icons.woff')
+}
+
+/**
+* Le comportement de la fenetre de l'historique (animation)
+*/
+@keyframes show {
+    form {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 80%;
+        height: 360px;
+    }
+}
+
+@keyframes hide {
+    form {
+        width: 80%;
+        height: 360px;
+    }
+    to {
+        width: 0;
+        height: 0;
+    }
+}
+
+body {
+    background-color: #000000;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 400px;
+    height: 560px;
+    margin: 20px auto;
+    padding-top: 20px;
+    background-color: rgb(40, 40, 40);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin: 7% 0;
+    width: 87.5%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+form * {
+    margin-bottom: 7%;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2em;
+}
+
+/* screen style rules */
+#screen {
+    width:  100%;
+    height: 120px;
+    background-color: rgb(58, 56, 56);
+    position: relative;
+}
+
+input {
+    margin: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    outline: none;
+    text-align: right;
+}
+
+input:nth-child(1) {
+    font-size: 1.3em;
+    height: 70px;
+    padding: 30px 10px 10px;
+}
+
+input:nth-child(2) {
+    font-size: 1em;
+    height: 50px;
+    padding: 0 10px;
+}
+
+/* history style rules */
+.toggleBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.toggleBtn::after {
+    font-family: 'bootstrap-icons';
+    content: '\F292';
+    color: rgb(113, 113, 113);
+    font-size: 0.9em;
+}
+
+.history {
+    width: 80%;
+    height: 360px;
+    padding: 15px;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    background-color: rgb(44, 44, 44);
+    border-radius: 15px;
+    color: #FFFFFF;
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.15);
+    overflow: hidden;
+    display: none;
+}
+
+.history {
+    font-size: 0.9em;
+}
+
+.historyData {
+    text-align: right;
+}
+
+p[id*='calcul']::before {
+    display: block;
+    margin: 12px -15px 12px -12px;
+    content: "";
+    border-bottom: 1px solid rgb(51, 50, 50);
+}
+
+p[id*='result']::before {
+    font-weight: 600;
+}
+
+/* button style rules */
+#backSpace::after {
+    font-family: 'bootstrap-icons';
+    content: '\F159';
+}
+
+.lightGreen {
+    background-color: rgb(159, 226, 226);
+}
+
+.lightBlue {
+    background-color: rgb(76, 181, 252);
+}
+
+.lightGray {
+    background-color: #FFFFFF;
+}
+
+.dark {
+    background-color: rgb(58, 56, 56);
+    color: #FFFFFF;
+}
+
+button {
+    width: 20.1%;
+    height: 55px;
+    box-shadow: 0 0 8px rgba(200, 200, 200, 0.5);
+    outline: none;
+}
+
+button:active {
+    box-shadow: none;
+    font-weight: 900;
+}
+
+.overFlow {
+    overflow-y: auto;
+    overflow-wrap: break-word
+}
+
+.show {
+    display: block;
+}
+
+.showAnimation {
+    animation: show .25s linear;
+}
+
+.hideAnimation {
+    animation: hide .25s linear;
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
