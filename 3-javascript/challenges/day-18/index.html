@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart (Panier d'achat)</title>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a href="#" class="navbar-brand">Bootstrap Shop</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="shopSubMenu" role="button" data-bs-toggle="dropdown">
+                            Shop
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="shopSubMenu">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    All products
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Popular items
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    New arriavals
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="">
+                    <button class="btn btn-outline-primary btn-sm">
+                        <i class="bi bi-cart-fill me-1"></i> Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5 text-center">
+            <h1 class="text-white">Shop in style</h1>
+            <p class="text-white-50">With this shop homepage template</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5">
+            <div id="productListId" class="row row-cols-2 row-cols-md-3 row-lg-4 row-cols-xl-4 gx-4 gx-lg-5 justify-content-center">
+                <!-- product 1 -->
+                <div class="col mb-5">
+                    <div class="card h-100">
+
+                        <!-- <img src="https://dummyimage.com/450x300/cfcfcf/0011ff.png&text=Maliki" alt=""> -->
+                        <!-- product image -->
+                        <img class="card-img-top" src="https://picsum.photos/451/301" alt="">
+
+                        <!-- product content -->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- product name -->
+                                <h5 class="fw-bolder">Fancy Product</h5>
+
+                                <!-- product notes -->
+                                <div class="d-flex justify-content-center text-warning mb-2">
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                </div>
+
+                                <!-- product price -->
+                                <span>$40.00 - 80.00</span>
+                            </div>
+                        </div>
+
+                        <!-- product actions -->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark btn-sm mt-auto" href="#">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 2 -->
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- sale badge -->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">
+                            Sale
+                        </div>
+
+                        <!-- product image -->
+                        <img class="card-img-top" src="https://picsum.photos/452/302" alt="">
+
+                        <!-- product content -->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- product name -->
+                                <h5 class="fw-bolder">Special item</h5>
+
+                                <!-- product notes -->
+                                <div class="d-flex justify-content-center text-warning mb-2">
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                </div>
+
+                                <!-- product price -->
+                                <span class="text-muted text-decoration-line-through">
+                                    $20.00
+                                </span>
+                                <span>$18.00</span>
+                            </div>
+                        </div>
+
+                        <!-- product actions -->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark btn-sm mt-auto" href="#">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 3 -->
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- sale badge -->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">
+                            Sale
+                        </div>
+                        
+                        <!-- product image -->
+                        <img class="card-img-top" src="https://picsum.photos/453/303" alt="">
+
+                        <!-- product content -->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- product name -->
+                                <h5 class="fw-bolder">Special item</h5>
+
+                                <!-- product notes -->
+                                <div class="d-flex justify-content-center text-warning mb-2">
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                </div>
+
+                                <!-- product price -->
+                                <span class="text-muted text-decoration-line-through">
+                                    $20.00
+                                </span>
+                                <span>$18.00</span>
+                            </div>
+                        </div>
+
+                        <!-- product actions -->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark btn-sm mt-auto" href="#">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 4 -->
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- product image -->
+                        <img class="card-img-top" src="https://picsum.photos/454/304" alt="">
+
+                        <!-- product content -->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- product name -->
+                                <h5 class="fw-bolder">Special item</h5>
+
+                                <!-- product notes -->
+                                <div class="d-flex justify-content-center text-warning mb-2">
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                </div>
+
+                                <!-- product price -->
+                                <span class="text-muted text-decoration-line-through">
+                                    $20.00
+                                </span>
+                                <span>$18.00</span>
+                            </div>
+                        </div>
+
+                        <!-- product actions -->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark btn-sm mt-auto" href="#">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 5 -->
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- sale badge -->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">
+                            Sale
+                        </div>
+
+                        <!-- product image -->
+                        <img class="card-img-top" src="https://picsum.photos/455/305" alt="">
+
+                        <!-- product content -->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- product name -->
+                                <h5 class="fw-bolder">Special item</h5>
+
+                                <!-- product notes -->
+                                <div class="d-flex justify-content-center text-warning mb-2">
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                </div>
+
+                                <!-- product price -->
+                                <span class="text-muted text-decoration-line-through">
+                                    $20.00
+                                </span>
+                                <span>$18.00</span>
+                            </div>
+                        </div>
+
+                        <!-- product actions -->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark btn-sm mt-auto" href="#">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 6 -->
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- product image -->
+                        <img class="card-img-top" src="https://picsum.photos/456/306" alt="">
+
+                        <!-- product content -->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- product name -->
+                                <h5 class="fw-bolder">Special item</h5>
+
+                                <!-- product notes -->
+                                <div class="d-flex justify-content-center text-warning mb-2">
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                </div>
+
+                                <!-- product price -->
+                                <span class="text-muted text-decoration-line-through">
+                                    $20.00
+                                </span>
+                                <span>$18.00</span>
+                            </div>
+                        </div>
+
+                        <!-- product actions -->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark btn-sm mt-auto" href="#">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 7 -->
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- sale badge -->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">
+                            Sale
+                        </div>
+
+                        <!-- product image -->
+                        <img class="card-img-top" src="https://picsum.photos/457/307" alt="">
+
+                        <!-- product content -->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- product name -->
+                                <h5 class="fw-bolder">Special item</h5>
+
+                                <!-- product notes -->
+                                <div class="d-flex justify-content-center text-warning mb-2">
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star"></div>
+                                </div>
+
+                                <!-- product price -->
+                                <span class="text-muted text-decoration-line-through">
+                                    $20.00
+                                </span>
+                                <span>$18.00</span>
+                            </div>
+                        </div>
+
+                        <!-- product actions -->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark btn-sm mt-auto" href="#">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 8 -->
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- product image -->
+                        <img class="card-img-top" src="https://picsum.photos/458/308" alt="">
+
+                        <!-- product content -->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- product name -->
+                                <h5 class="fw-bolder">Special item</h5>
+
+                                <!-- product notes -->
+                                <div class="d-flex justify-content-center text-warning mb-2">
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star-fill"></div>
+                                    <div class="bi bi-star"></div>
+                                    <div class="bi bi-star"></div>
+                                </div>
+
+                                <!-- product price -->
+                                <span class="text-muted text-decoration-line-through">
+                                    $20.00
+                                </span>
+                                <span>$18.00</span>
+                            </div>
+                        </div>
+
+                        <!-- product actions -->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark btn-sm mt-auto" href="#">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark py-5">
+        <div class="container">
+            <p class="text-center text-white">
+                Copyright &copy; Your Webiste 2023
+            </p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
