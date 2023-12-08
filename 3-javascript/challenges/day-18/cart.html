@@ -67,14 +67,52 @@
 
     <header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5 text-center">
-            <h1 class="text-white">Shop in style</h1>
-            <p class="text-white-50">With this shop homepage template</p>
+            <h1 class="text-white">Mon panier</h1>
+            <p class="text-white-50">Tous les articles du panier</p>
         </div>
     </header>
 
     <section class="py-5">
         <div class="container px-4 px-lg-5">
-            <div id="productListId" class="row row-cols-2 row-cols-md-3 row-lg-4 row-cols-xl-4 gx-4 gx-lg-5 justify-content-center"></div>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Remove</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Designation</th>
+                            <th scope="col" class="text-end">Prix unitaire</th>
+                            <th scope="col" class="text-end">Quantité</th>
+                            <th scope="col" class="text-end">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <th>1</th>
+                            <td><span class="bi bi-trash text-danger"></span></td>
+                            <td><img src="https://picsum.photos/458/308" class="img-thumbnail rounded" style="width:  80px;" alt=""></td>
+                            <td>Produit 1</td>
+                            <td class="text-end">100 MAD</td>
+                            <td class="text-end">2</td>
+                            <td class="text-end">200 MAD</td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td><span class="bi bi-trash text-danger"></span></td>
+                            <td><img src="https://picsum.photos/458/308" class="img-thumbnail rounded" style="width:  80px;" alt=""></td>
+                            <td>Produit 2</td>
+                            <td class="text-end">100 MAD</td>
+                            <td class="text-end">2</td>
+                            <td class="text-end">200 MAD</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="text-end fw-bold">Prix total HT :</th>
+                            <td class="text-end fw-bold">400 MAD</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
@@ -87,6 +125,6 @@
     </footer>
 
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/app.js" type="module"></script>
+    <script src="./assets/js/cart.js" type="module"></script>
 </body>
 </html>

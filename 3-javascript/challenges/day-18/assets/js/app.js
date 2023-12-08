@@ -1,86 +1,7 @@
-// product list
-const products = [
-    {
-        "id": 1,
-        "name": "Fancy Product",
-        "price": 40.00,
-        "discount": 8,
-        "img": "https://picsum.photos/451/301",
-        "note": 0, 
-        "hasCartBtn": false,
-        "hasSaleBadge": false
-    },
-    {
-        "id": 2,
-        "name": "Special item 2",
-        "price": 18.00,
-        "discount": 0,
-        "img": "https://picsum.photos/452/302",
-        "note": 2, 
-        "hasCartBtn": true,
-        "hasSaleBadge": true
-    },
-    {
-        "id": 3,
-        "name": "Special item 3",
-        "price": 22.00,
-        "discount": 10,
-        "img": "https://picsum.photos/453/303",
-        "note": 1, 
-        "hasCartBtn": true,
-        "hasSaleBadge": true
-    },
-    {
-        "id": 4,
-        "name": "Special item 4",
-        "price": 28.00,
-        "discount": 0,
-        "img": "https://picsum.photos/454/304",
-        "note": 5, 
-        "hasCartBtn": true,
-        "hasSaleBadge": true
-    },
-    {
-        "id": 5,
-        "name": "Special item 5",
-        "price": 42.00,
-        "discount": 0,
-        "img": "https://picsum.photos/455/305",
-        "note": 4, 
-        "hasCartBtn": true,
-        "hasSaleBadge": true
-    },
-    {
-        "id": 6,
-        "name": "Special item 6",
-        "price": 34.00,
-        "discount": 0,
-        "img": "https://picsum.photos/456/306",
-        "note": 3, 
-        "hasCartBtn": false,
-        "hasSaleBadge": false
-    },
-    {
-        "id": 7,
-        "name": "Special item 7",
-        "price": 85.00,
-        "discount": 10,
-        "img": "https://picsum.photos/457/307",
-        "note": 2, 
-        "hasCartBtn": false,
-        "hasSaleBadge": false
-    },
-    {
-        "id": 8,
-        "name": "Special item 8",
-        "price": 61.00,
-        "discount": 15,
-        "img": "https://picsum.photos/458/308",
-        "note": 2, 
-        "hasCartBtn": true,
-        "hasSaleBadge": true
-    }
-];
+import * as helpers from "./helpers.js";
+
+// etat du compteur du panier
+helpers.countShoppinCartElementUpdateBadge();
 
 // const testElt = document.createElement('div');
 // testElt.classList.add("col", "mb-5");
@@ -88,10 +9,9 @@ const products = [
 // console.log(testElt);
 
 // generate product list
-function generateProductList() {
-    const productListContainer = document.querySelector('#productListId');
-    
-    products.forEach(product => {
+const productListContainer = document.querySelector('#productListId');
+function generateProductList(productData) {
+    productData.forEach(product => {
         const productItem = document.createElement('div');
         productItem.classList.add('col', 'mb-5');
         productItem.innerHTML = `
@@ -105,18 +25,18 @@ function generateProductList() {
                         <h5 class="fw-bolder">${product.name}</h5>
 
                         <div class="d-flex justify-content-center text-warning mb-2">
-                            ${productNoteStars(product.note)}
+                            ${helpers.productNoteStars(product.note)}
                         </div>
 
-                        ${product.discount ? `<span class="text-muted text-decoration-line-through">${formatPrice(product.price)}</span>` : ``}
-                        <span>${formatPrice(calculateDiscountedPrice(product.price, product.discount))}</span>
+                        ${product.discount ? `<span class="text-muted text-decoration-line-through">${helpers.formatPrice(product.price)}</span>` : ``}
+                        <span>${helpers.formatPrice(helpers.calculateDiscountedPrice(product.price, product.discount))}</span>
                     </div>
                 </div>
 
                 ${product.hasCartBtn ?
                 `<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
-                        <a class="btn btn-outline-dark btn-sm mt-auto" href="#">
+                        <a data-product-id="${product.id}" class="btn btn-outline-dark btn-sm mt-auto">
                             Add to cart
                         </a>
                     </div>
@@ -129,40 +49,25 @@ function generateProductList() {
 }
 
 // appel de fonction
-generateProductList();
+generateProductList(helpers.products);
 
-// formatage du prix avec la devise
-function formatPrice(price) {
-    return price.toLocaleString('fr-FR', {style:'currency', currency: 'MAD'});
-}
+// fonction pour ajouter un article dans le panier
+productListContainer.addEventListener('click', addToCart);
+function addToCart(evt) {
+    evt.preventDefault(); // permet de supprimer l'evement par défaut d'un élement html
 
-// fonction pour caculer la remise en pourcentage (le prix remisé)
-function calculateDiscountedPrice(price, discount) {
-    if(discount !== null && discount > 0 && discount < 100) {
-        const discountAmount = price * (discount / 100);
-        return price - discountAmount;
-    } else {
-        return price;
-    }
-}
+    const dataProductIdValue = parseInt(evt.target.getAttribute('data-product-id'));
+    if(dataProductIdValue) {
+        const selectedProduct = helpers.products.find(product => product.id === dataProductIdValue);
+        // console.log(selectedProduct);
 
-// product note starts
-// soit note = 5, ou 4, ... 1, 0
-// on sait qu'on a aux max 5 etoiles
-// <div class="bi bi-star-fill"></div>
-// <div class="bi bi-star"></div>
-function productNoteStars(note) {
-    let divStars = ``;
-    const emptyStars = 5 - note; // 5 - 2 = 3
+        // ajouter un article au panier
+        helpers.addCartToLocalStorage(selectedProduct);
 
-    for(let i = 0; i < note; i++) {
-        divStars += `<div class="bi bi-star-fill"></div>`;
+        // modifier l'état du compeur du panier
+        helpers.countShoppinCartElementUpdateBadge();
     }
 
-    for(let j = 0; j < emptyStars; j++) {
-        divStars += `<div class="bi bi-star"></div>`;
-    }
-    
-    return divStars;
+    evt.target.blur();
 }
 
