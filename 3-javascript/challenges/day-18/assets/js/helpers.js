@@ -88,12 +88,13 @@ export function formatPrice(price) {
 }
 
 // fonction pour caculer la remise en pourcentage (le prix remisé)
-export function calculateDiscountedPrice(price, discount) {
+export function calculateDiscountedPrice(price, discount, addCurrency = false) {
     if(discount !== null && discount > 0 && discount < 100) {
         const discountAmount = price * (discount / 100);
-        return price - discountAmount;
+        const amount = price - discountAmount;
+        return addCurrency ? formatPrice(amount) : amount;
     } else {
-        return price;
+        return addCurrency ? formatPrice(price) : price;
     }
 }
 
@@ -118,12 +119,12 @@ export function productNoteStars(note) {
 }
 
 // set shopping cart in localStorage
-export function setShoppingCartInCocalStorage(myCart) {
+export function setShoppingCartInLocalStorage(myCart) {
     localStorage.setItem('myShoppingCart', JSON.stringify(myCart));
 }
 
 // get shopping cart in localStorage
-export function getShoppingCartInCocalStorage() {
+export function getShoppingCartInLocalStorage() {
     let myCart = localStorage.getItem('myShoppingCart');
 
     if(!myCart) {
@@ -135,21 +136,31 @@ export function getShoppingCartInCocalStorage() {
     return myCart;
 }
 
+// supprimer un element dans le panier du localStorage
+export function removeShoppingCartItemInLocalStorage(cartId) {
+    let myCart = getShoppingCartInLocalStorage();
+    if(myCart && myCart.length > 0) {
+        myCart = myCart.filter(cart => cart.id !== parseInt(cartId));
+        setShoppingCartInLocalStorage(myCart);
+    }
+}
+
 // fonction pour ajouter un element dans le localStorage
-export function addCartToLocalStorage(selectedProduct) {
+export function addCartToLocalStorage(selectedProduct, newQuantity = 0) {
     // vérifier si le panier existe dajà dans la localStorage
-    let monPanier = getShoppingCartInCocalStorage();
+    let monPanier = getShoppingCartInLocalStorage();
 
     // ajouter un article au panier
     const existingProductIndex = monPanier.findIndex(panier => panier.id === selectedProduct.id);
     if(existingProductIndex !== -1) {
+        const quantity = (newQuantity !== 0) ? newQuantity : monPanier[existingProductIndex].quantity + 1
         monPanier[existingProductIndex] = {
             id: selectedProduct.id,
             img: selectedProduct.img,
             name: selectedProduct.name,
             price: selectedProduct.price,
             discount: selectedProduct.discount,
-            quantity: monPanier[existingProductIndex].quantity + 1
+            quantity: quantity
         };
     } else {
         monPanier.push({
@@ -163,12 +174,83 @@ export function addCartToLocalStorage(selectedProduct) {
     }
 
     // mettre à jour le panier
-    setShoppingCartInCocalStorage(monPanier);
+    setShoppingCartInLocalStorage(monPanier);
 }
 
-// 
+// fonction pour mettre à jour le compteur du panier
 export function countShoppinCartElementUpdateBadge() {
-    let monPanier = getShoppingCartInCocalStorage();
+    let monPanier = getShoppingCartInLocalStorage();
     const cartBadegIdElt = document.querySelector("#cartBadgeId");
     cartBadegIdElt.innerText = monPanier.length;
+}
+
+// fonction permettant de d'ajuster la quantité d'un article
+export function adjustQuantity(elementId, cartItemId, actionValue) {
+    let myCart = getShoppingCartInLocalStorage();
+    const cartItem = myCart.find(cart => cart.id === parseInt(cartItemId));
+    if(cartItem) {
+        let quantity = parseInt(cartItem.quantity) + actionValue;
+        quantity = (quantity > 0) ? quantity : 1;
+        if(actionValue !== 0) {
+            addCartToLocalStorage(cartItem, quantity);
+        }
+        const cartItemQuantityIdElt = document.querySelector('#'+elementId);
+        cartItemQuantityIdElt.innerText = quantity;
+    }
+}
+
+// fonction permettant de calculer le prix total d'un article
+export function getShoppingCartItemTotalPrice(cartItem, addCurrency = false) {
+    let totalPrice = 0;
+    if(cartItem) {
+        totalPrice = parseInt(cartItem.quantity) * calculateDiscountedPrice(parseFloat(cartItem.price), parseInt(cartItem.discount));
+    }
+    return addCurrency ? formatPrice(totalPrice) : totalPrice;
+}
+
+// fonction permettant de mettre à jour le prix total d'un article
+export function updateShoppingCartItemTotalPrice(elementId, cartItemId, addCurrency = true) {
+    let myCart = getShoppingCartInLocalStorage();
+    const cartItem = myCart.find(cart => cart.id === parseInt(cartItemId));
+    let totalPrice = getShoppingCartItemTotalPrice(cartItem, addCurrency);
+    const totalPriceElt = document.querySelector('#'+elementId);
+    totalPriceElt.innerText = totalPrice;
+}
+
+// fonction permettant de calculer le montant total
+export function getShoppingCartTotalAmount(myCart, addCurrency = false) {
+    let totalAmount = 0;
+    if(myCart.length > 0) {
+        myCart.map(cart => { totalAmount += getShoppingCartItemTotalPrice(cart); });
+    }
+    return addCurrency ? formatPrice(totalAmount) : totalAmount;
+}
+
+// fonction permettant de mettre à jour le montant total
+export function updateShoppingCartTotalAmount(elementId, addCurrency = true) {
+    let myCart = getShoppingCartInLocalStorage();
+    let totalAmount = getShoppingCartTotalAmount(myCart, addCurrency);
+    const totalAmountElt = document.querySelector('#'+elementId);
+    totalAmountElt.innerText = totalAmount;
+}
+
+// fontion permettant de supprimer un element dans le DOM
+export function removeElementByIdInDOM(elementId, parentId) {
+    // récupération du parent existe
+    const parentElement = document.querySelector('#'+parentId);
+    if(parentElement) { // si le parent existe
+        // console.log(parentElement);
+        // récupération de l'enfant à supprimer
+        const  elementToRemove = document.querySelector('#'+elementId);
+        if(elementToRemove) { // si l'enfant existe
+            parentElement.removeChild(elementToRemove);
+            return true;
+        } else {
+            console.log("L'élément enfant à supprimer n'existe pas !");
+            return false;
+        }
+    } else {
+        console.log("L'élément parent n'existe pas !");
+        return false;
+    }
 }
