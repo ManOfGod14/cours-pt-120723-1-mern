@@ -1,0 +1,15 @@
+### 1 - pour initier un projet node en utilisant les packages il faut taper commande :
+$ npm init
+cette va nous crééer un fichier "package.json" dans la racine de notre projet en vous posant des questions
+ou
+$ npm init -y
+en utilisant l'option -y nous aurons la création du  fichier "package.json" sans être dérangé par les questions
+
+### 2 - pour installer un package il utiliser commande : npm instal <nom_package>
+Exemple d'installation du package node-fetch
+$ npm install node-fetch
+Ou
+$ npm i node-fetch
+
+### 3 - pour lancer un projet existant il faut taper la commande : 
+$ npm install
