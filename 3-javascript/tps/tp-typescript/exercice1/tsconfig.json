@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "ES5",
+    "noEmitOnError": true,
+    "strict": true
+  },
+  "files": ["./app.ts"],
+  "exclude": ["node_modules"]
+}
