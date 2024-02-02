@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 const cities = [
   { name: "New York", lat: 40.7128, lng: -74.006 },

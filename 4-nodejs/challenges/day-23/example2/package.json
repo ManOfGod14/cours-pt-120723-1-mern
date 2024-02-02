@@ -1,15 +1,16 @@
 {
-  "name": "example1",
+  "name": "example2",
   "version": "1.0.0",
-  "description": "Application pour afficher la temperature d'une ville",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Maliki",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^3.3.2"
   }
 }
