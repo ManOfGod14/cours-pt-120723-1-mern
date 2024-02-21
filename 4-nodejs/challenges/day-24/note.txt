@@ -1,0 +1,4 @@
+Exemple d'installation du package node-fetch la version 2.6.1
+$ npm install node-fetch@2.6.1
+Ou
+$ npm i node-fetch@2.6.1
