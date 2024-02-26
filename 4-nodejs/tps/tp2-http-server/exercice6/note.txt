@@ -1,0 +1,4 @@
+## installation du module mime
+$ npm install mime
+$
+$ npm install mime@2.4.6
