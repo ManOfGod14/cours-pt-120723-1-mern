@@ -28,12 +28,18 @@ const server = http.createServer((req, res) => {
        * il faut transformer le contenu de body sous forme de clé valeur
        * {
        *    name: "Maliki",
-       *    email="yemenodivino%40gmail.com"
+       *    email: "yemenodivino%40gmail.com"
        * }
        */
+      const params = new URLSearchParams(body);
+      console.log("Body content with params : ", params);
+      const formData = Object.fromEntries(params);
+      console.log("Body content with object : ", formData);
+      console.log("Name : ", formData.name);
+      console.log("Email : ", formData.email);
 
       res.writeHead(200, { "Content-Type": "application/json" });
-      res.write(JSON.stringify({}));
+      res.write(JSON.stringify(formData));
     });
   } else {
     // mettre à disposition du demandeur (client) le formulaire

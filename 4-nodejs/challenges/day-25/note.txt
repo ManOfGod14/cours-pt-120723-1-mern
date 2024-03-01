@@ -1,0 +1,5 @@
+### install node-fetch
+$ npm install node-fetch@2.6.1
+$
+$ npm i --save-dev @types/node-fetch
+$
