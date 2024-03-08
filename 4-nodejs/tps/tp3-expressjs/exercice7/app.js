@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 
-app.get("/hello/:name", (req, res) => {
-  //   console.log(req);
-  console.log(req.params);
-  res.send(`Hello ${req.params.name}`);
+app.use((req, res, next) => {
+  console.log(`Method : ${req.method}`);
+  console.log(`URL : ${req.url}`);
+  next();
 });
 
 const port = 3000;

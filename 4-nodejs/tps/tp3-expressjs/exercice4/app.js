@@ -36,6 +36,7 @@ app.post("/login", (req, res) => {
     password: "123456",
   };
 
+  // la destructuration
   const { username, password } = req.body;
 
   if (user.username === username && user.password === password) {
@@ -47,6 +48,7 @@ app.post("/login", (req, res) => {
 
 // exemple complexe
 app.post("/login2", (req, res) => {
+  // la destructuration
   const { username, password } = req.body;
 
   const userData = users.find(
