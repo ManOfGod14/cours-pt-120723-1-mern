@@ -33,11 +33,33 @@ app.get("/api/users/find/:id", (req, res) => {
 });
 
 // Route pour mettre à jour les informations un utilisateur
-app.get("/api/users/update/:id", (req, res) => {
+app.put("/api/users/update/:id", (req, res) => {
+  const userId = req.params.id;
+  const { name, email } = req.body;
+  const index = users.findIndex((user) => user.id === parseInt(userId));
+  if (index === -1) {
+    res.status(404).json({ error: "User not found" });
+  } else {
+    users[index].name = name;
+    users[index].email = email;
+
+    res.json({
+      message: "Utilisateur modifié avec succès",
+      data: users[index],
+    });
+  }
+});
+
+// Route pour supprimer un utilisateur
+app.delete("/api/users/delete/:id", (req, res) => {
   const userId = req.params.id;
   const user = users.find((user) => user.id === parseInt(userId));
   if (user) {
-    res.json({ message: "Utilisateur récupéré avec succès", data: user });
+    users = users.filter((user) => user.id !== parseInt(userId));
+    res.json({
+      message: "Utilisateur suprimé avec succès",
+      data: users,
+    });
   } else {
     res.status(404).json({ error: "User not found" });
   }
