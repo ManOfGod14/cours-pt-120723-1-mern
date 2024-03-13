@@ -1,0 +1,15 @@
+### initiation d'un projet
+$ npm init
+$
+$ npm init -y
+$
+
+### installation de la librairie express
+$ npm install express
+$
+
+### installation du moteur de template express-handlebars
+$ npm install express-handlebars
+$
+$ npm i express-handlebars@5.3.4
+$
