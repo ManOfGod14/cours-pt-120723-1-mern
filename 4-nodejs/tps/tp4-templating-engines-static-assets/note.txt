@@ -13,3 +13,13 @@ $ npm install express-handlebars
 $
 $ npm i express-handlebars@5.3.4
 $
+
+### installation du moteur de template ejs
+$ npm install ejs
+$
+$ npm install express-ejs-layouts
+$
+
+### installation du package/librairie nodemon
+$ npm install --save-dev nodemon
+$
