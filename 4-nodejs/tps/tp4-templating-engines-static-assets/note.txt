@@ -23,3 +23,7 @@ $
 ### installation du package/librairie nodemon
 $ npm install --save-dev nodemon
 $
+
+### installation de la librairie pug
+$ npm install pug
+$
