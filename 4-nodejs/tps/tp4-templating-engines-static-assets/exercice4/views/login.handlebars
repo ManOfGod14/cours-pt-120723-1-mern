@@ -1,0 +1,23 @@
+<h1>Authentification</h1>
+
+<form action="/login" method="POST">
+  {{#if errorMessage}}
+    <p style="color:red">{{errorMessage}}</p>
+  {{/if}}
+
+  <div>
+    <label for="username">Nom d'utilisateur :</label>
+    <input type="text" name="username" id="username" />
+  </div>
+
+  <br />
+  <div>
+    <label for="password">Mot de passe :</label>
+    <input type="password" name="password" id="password" />
+  </div>
+
+  <br />
+  <div>
+    <button type="submit">Se connecter</button>
+  </div>
+</form>
